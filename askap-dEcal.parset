@@ -1,0 +1,172 @@
+[data]
+_Help = Visibility data options
+ms =  
+column = DATA
+time-chunk = 1080
+freq-chunk = 48
+chunk-by = None
+chunk-by-jump = 0
+single-chunk = 
+
+[sel]
+_Help = Data selection options
+field = 0
+ddid = None
+taql = 
+chan = 
+
+[model]
+_Help = Calibration model options
+list = MODEL_DATA
+ddes = auto
+beam-pattern = None
+beam-l-axis = None
+beam-m-axis = None
+
+[montblanc]
+_Help = Montblanc simulation options
+device-type = CPU
+dtype = float
+feed-type = linear
+mem-budget = 4096
+verbosity = WARNING
+
+[weight]
+_Help = Weighting options
+column = WEIGHT_SPECTRUM
+
+[flags]
+_Help = Flagging options
+apply = legacy
+auto-init = legacy
+save = cubical
+reinit-bitflags = False
+post-sol = False
+tf-chisq-median = 1.2
+tf-np-median = 0.5
+time-density = 0.5
+chan-density = 0.5
+ddid-density = 0.5
+
+[sol]
+_Help = Solution options which apply at the solver level
+jones = G,dE
+precision = 32
+delta-g = 1e-06
+delta-chi = 1e-06
+chi-int = 5
+last-rites = True
+stall-quorum = 0.99
+term-iters = 
+min-bl = 100.0
+max-bl = 1000000.0
+subset = 
+
+[bbc]
+_Help = Options for baseline-based corrections (a.k.a. BBCs, a.k.a. interferometer gains).
+load-from = 
+compute-2x2 = False
+apply-2x2 = False
+save-to = {data[ms]}/BBC-field:{sel[field]}-ddid:{sel[ddid]}.parmdb
+per-chan = True
+plot = True
+
+[dist]
+_Help = Parallelization and distribution options
+ncpu = 4
+min-chunks = 3
+
+[out]
+_Help = Options for output products
+name = dEcal
+mode = sr
+column = CORRECTED_DATA
+reinit-column = False
+subtract-model = 0
+subtract-dirs = :
+plots = True
+plots-show = False
+
+[log]
+_Help = Options related to logging
+memory = True
+boring = False
+append = False
+verbose = 0
+file-verbose = None
+
+[debug]
+_Help = Debugging options for the discerning masochist
+pdb = False
+
+[misc]
+_Help = Miscellaneous options
+random-seed = None
+parset-version = 0.1
+
+[JONES-TEMPLATE]
+_Help = Options for {LABEL}-Jones term
+_NameTemplate = {LABEL}
+_ExpandedFrom = --sol-jones
+_OtherTemplates = _Help:label
+label = {LABEL}
+solvable = True
+type = complex-2x2
+load-from = 
+xfer-from = 
+save-to = {data[ms]}/{JONES}-field_{sel[field]}-ddid_{sel[ddid]}.parmdb
+dd-term = False
+fix-dirs = 
+update-type = full
+time-int = 1
+freq-int = 1
+clip-low = 0.1
+clip-high = 10.0
+clip-after = 5
+max-iter = 20
+conv-quorum = 0.99
+ref-ant = None
+
+[g]
+_Help = Options for G-Jones term
+label = G
+solvable = True
+type = complex-2x2
+load-from = 
+xfer-from = 
+save-to = {data[ms]}/{JONES}-field:{sel[field]}-ddid:{sel[ddid]}.parmdb
+dd-term = 0
+fix-dirs = 
+update-type = full
+time-int = 18
+freq-int = 48
+clip-low = 0.1
+clip-high = 10.0
+clip-after = 5
+max-iter = 20
+conv-quorum = 0.99
+ref-ant = None
+_Templated = True
+term-iters = 10
+
+[de]
+_Help = Options for dE-Jones term
+label = de
+solvable = True
+type = complex-2x2
+load-from =
+xfer-from =
+save-to = {data[ms]}/{JONES}-field_{sel[field]}-ddid_{sel[ddid]}.parmdb
+dd-term = 1
+fix-dirs = 0
+update-type = full
+time-int = 135
+freq-int = 48
+clip-low = 0.1
+clip-high = 10.0
+clip-after = 5
+max-iter = 20
+conv-quorum = 0.99
+ref-ant = None
+_Templated = True
+term-iters = 10
