@@ -30,4 +30,10 @@ Dependencies are as follows. *By far* the easiest way to deal with this lot is t
 
 * [Montage](http://montage.ipac.caltech.edu/): I think this is only used if you want to visualise the model and the assumptions that have been made about the sources that have dE's applied to them (which you should definitely do). That's the `show_models.py` script which presently has to be executed manually.
 
+Here's an example:
+
+![](https://i.imgur.com/fV8pzw2.gif)
+
+This shows the map obtained following the second (a&p) self-cal step, blinking with the final map. The problem source on the flank of the beam is recovered very cleanly, revealing a handful of sources that are not visible in the initial image. The RMS noise in the map centre improves by about 40%.
+
 *"AIPS comes with absolutely no warranty."*
