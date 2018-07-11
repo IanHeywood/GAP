@@ -30,4 +30,4 @@ Dependencies are as follows. *By far* the easiest way to deal with this lot is t
 
 * [Montage](http://montage.ipac.caltech.edu/): I think this is only used if you want to visualise the model and the assumptions that have been made about the sources that have dE's applied to them (which you should definitely do). That's the `show_models.py` script which presently has to be executed manually.
 
-"AIPS comes with absolutely no warranty."
+*"AIPS comes with absolutely no warranty."*
