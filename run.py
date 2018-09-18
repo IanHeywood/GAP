@@ -55,7 +55,7 @@ for myms in mslist:
 		subprocess.call(cc,shell=True)
 
 		# dE calibration
-	        cc = 'python run_cubical.py '+myms+' askap-dEcal.parset dEcal '+str(field)+' '+str(dryrun)
+	        cc = 'python run_cubical_freqchunks.py '+myms+' askap-dEcal.parset dEcal '+str(field)+' '+str(dryrun)
 	        subprocess.call(cc,shell=True)	
 
 		# image residuals
