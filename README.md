@@ -1,6 +1,6 @@
 # GAP
 
-This is a set of scripts which attempts to perform automated self-calibration of an ASKAP beam, the end result being a full-band Stokes-I image. These scripts are somewhat dusty and feral, I haven't got around to bringing them up-to-date and making them for public consumption, but hopefully they'll be of some use. 
+This is a set of scripts which attempts to perform automated self-calibration of an ASKAP beam, the end result being a full-band Stokes-I image. These scripts are somewhat ropey, I haven't got around to bringing them up-to-date and making them for public consumption, but hopefully they'll be of some use. 
 
 The starting point is assumed to be a flagged and bandpass-calibrated / flux-scaled Measurement Set. From there the scripts perform three cycles of imaging and self-calibration. The first two are traditional (2GC) passes, one with phase corrections derived from an initial image of the data, and second with amplitude and phase corrections, with an intermediate imaging step to refine the model. 
 
